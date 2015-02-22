@@ -8,7 +8,6 @@ define([
     template: template,
     events: {},
     initialize: function(){
-      console.log(this.collection);
       this.goalForm = new GoalFormChildView({
         collection: this.collection
       })

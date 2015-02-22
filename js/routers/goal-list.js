@@ -11,12 +11,18 @@ define([
     },
     index: function(){
       var goals = new GoalsCollection();
-      goals.fetch();
-      console.log('goals' + goals.length);
-      var view = new GoalListIndexView({
-        collection: goals
+      goals.fetch({
+        success: function(){
+          console.log("fetch success");
+          console.log(goals);
+          var view = new GoalListIndexView({
+            collection: goals
+          });
+          RootView.getInstance().setView(view);
+        }
       });
-      RootView.getInstance().setView(view);
+      console.log(goals);
+
     },
     activity: function(){
     }
