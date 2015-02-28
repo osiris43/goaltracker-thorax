@@ -1,9 +1,8 @@
-{{#if collection.length}}
-  {{#collection}}
-    <li>I will {{activity}} {{measurement}} in {{timeframe}}
-  {{/collection}}
-{{else}}
-  <p>No goals yet, get started!</p>
-{{/if}}
-{{view goalForm}}
+<h3>Goals</h3>
+{{#collection tag="ul"}}
+  <li>I will {{activity}} {{measurement}} in {{timeframe}}
+{{/collection}}
 
+<h4>Add Goals</h4>
+{{view goalForm}}
+{{view activityTracker}}

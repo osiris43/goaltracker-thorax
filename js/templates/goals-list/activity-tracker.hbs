@@ -1,0 +1,9 @@
+<h3>Activity Tracker</h3>
+<form>
+  {{#collection tag="select" id="addActivity" name="goal"}} 
+    <option id="{{id}}">{{activity}}</option>
+  {{/collection}}
+  <input type="text" name="progress" />
+  <label name="count" value="{{measurement}}" />
+  <button type="submit"> Add </button>
+</form>

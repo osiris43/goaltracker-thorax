@@ -2,29 +2,27 @@ define([
   'backbone',
   'views/root',
   'views/goals-list/index',
-  'collections/goals'
-], function (Backbone, RootView, GoalListIndexView, GoalsCollection) {
+  'collections/goals',
+  'collections/progress-events'
+], function (Backbone, RootView, GoalListIndexView, GoalsCollection, ProgressCollection) {
   return Backbone.Router.extend({
     routes: {
       "": "index",
-      "activity": "activity"
     },
     index: function(){
       var goals = new GoalsCollection();
+      var progress = new ProgressCollection();
       goals.fetch({
         success: function(){
-          console.log("fetch success");
-          console.log(goals);
+          console.log("succeeded");
           var view = new GoalListIndexView({
-            collection: goals
+            collection: goals,
+            progress: progress
           });
           RootView.getInstance().setView(view);
         }
       });
-      console.log(goals);
 
     },
-    activity: function(){
-    }
   });
 });

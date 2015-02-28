@@ -4,7 +4,7 @@ define(['model'], function (Model) {
     defaults: {
       activity: "",
       measurement: "",
-      timeframe: ""
+      timeframe: "",
     },
     //toJSON: function(){
     //  return {goal: _.clone(this.attributes)}
