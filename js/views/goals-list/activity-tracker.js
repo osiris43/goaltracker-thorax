@@ -7,6 +7,9 @@ define([
     name: 'goals-list/activity-tracker',
     template: template,
     events: {"submit form": "addProgress"},
+    initialize: function(){
+      this.goals.on("add", this.render);
+    },
 
     addProgress: function(evt){
       evt.preventDefault();
