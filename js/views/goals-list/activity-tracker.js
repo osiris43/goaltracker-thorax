@@ -8,15 +8,17 @@ define([
     template: template,
     events: {"submit form": "addProgress"},
 
-
     addProgress: function(evt){
       evt.preventDefault();
       this.serialize(function(attrs){
         this.$('input').val('');
         var model = new ProgressModel(attrs)
-        this.progress.create(model, {
+        this.collection.create(model, {
           success: function(model, response, options){
             console.log("successfully added progress")
+          },
+          error: function(model, response, options){
+            console.log(response);
           }
         })
       })

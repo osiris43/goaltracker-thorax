@@ -12,9 +12,9 @@ define([
     index: function(){
       var goals = new GoalsCollection();
       var progress = new ProgressCollection();
+      progress.fetch();
       goals.fetch({
         success: function(){
-          console.log("succeeded");
           var view = new GoalListIndexView({
             collection: goals,
             progress: progress
