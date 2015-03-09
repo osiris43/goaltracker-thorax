@@ -19,7 +19,6 @@ define(['collection', 'models/progress-event', 'localstorage'], function (Collec
           }
         }, 0);
 
-        console.log("made it")
         var d = new Model({
           goal: goal.get("activity"),
           progress: p,
@@ -28,8 +27,6 @@ define(['collection', 'models/progress-event', 'localstorage'], function (Collec
 
         this.data.push(d);
       }, this);
-
-      console.log(this.data);
     }
   });
 });

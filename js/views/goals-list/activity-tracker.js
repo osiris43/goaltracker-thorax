@@ -8,9 +8,12 @@ define([
     template: template,
     events: {"submit form": "addProgress"},
     initialize: function(){
-      this.goals.on("add", this.render);
+      this.goals.on("add", this.update, this);
     },
 
+    update: function(){
+      this.render();
+    },
     addProgress: function(evt){
       evt.preventDefault();
       this.serialize(function(attrs){
