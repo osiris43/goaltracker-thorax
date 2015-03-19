@@ -2,7 +2,8 @@ define(['collection', 'models/progress-event', 'localstorage'], function (Collec
   return Collection.extend({
     name: 'progress-events',
     model: Model,
-    localStorage: new Backbone.LocalStorage("ProgressCollection"),
+    //localStorage: new Backbone.LocalStorage("ProgressCollection"),
+    url: "http://localhost:3000/progress_events",
     initialize: function(){
     },
 
